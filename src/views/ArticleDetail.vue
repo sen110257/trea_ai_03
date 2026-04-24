@@ -177,6 +177,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 import { Star, Share, Collection, ChatDotRound, ThumbUp } from '@element-plus/icons-vue'
 import SidebarWidget from '@/components/SidebarWidget.vue'
 import { articles } from '@/data/staticData'

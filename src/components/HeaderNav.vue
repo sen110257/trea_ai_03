@@ -42,6 +42,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 import { Search, Star } from '@element-plus/icons-vue'
 
 const router = useRouter()

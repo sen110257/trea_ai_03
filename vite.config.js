@@ -8,12 +8,5 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src')
     }
-  },
-  css: {
-    preprocessorOptions: {
-      css: {
-        additionalData: `@import '@/styles/global.css';`
-      }
-    }
   }
 })
