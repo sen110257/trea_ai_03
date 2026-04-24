@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* 年轻化趣味化配色方案 */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --light-color: #f8f9fa;
+  --dark-color: #2c3e50;
+  --success-color: #20c997;
+  --warning-color: #ffc107;
+  --danger-color: #f56565;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+/* 全局动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 通用工具类 */
+.text-gradient {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: var(--transition);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.fun-button {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.fun-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+}
+
+.fun-button:hover::before {
+  left: 100%;
+}
+
+/* Element Plus 样式覆盖 */
+.el-card {
+  border-radius: 16px;
+  border: none;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.el-card:hover {
+  box-shadow: var(--card-hover-shadow);
+}
+
+.el-button {
+  border-radius: 25px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.el-button--primary {
+  background: var(--gradient-1);
+  border: none;
+}
+
+.el-button--primary:hover {
+  background: var(--gradient-2);
+  transform: translateY(-2px);
+}
+
+.el-carousel__item {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.el-tag {
+  border-radius: 15px;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.el-tag:hover {
+  transform: scale(1.05);
+}
